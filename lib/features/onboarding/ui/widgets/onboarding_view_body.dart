@@ -32,7 +32,7 @@ class OnboardingViewBody extends StatelessWidget {
                 children: [
                   Text(
                     'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                    style: AppTextStyle.font13RegularGrey,
+                    style: AppTextStyle.font14RegularGrey(context),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 32.h),
