@@ -12,10 +12,10 @@ class DocApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      // minTextAdapt: true,
+      minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Doc App',
+        title: 'Doc Doc',
         initialRoute: Routes.onBoardingView,
         onGenerateRoute: appRouter.generateRoute,
         theme: ThemeData(

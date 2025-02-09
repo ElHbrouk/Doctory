@@ -14,7 +14,7 @@ class DontHaveAnAccount extends StatelessWidget {
       children: [
         Text(
           'Don\'t have an account?',
-          style: AppTextStyle.font14RegularDarkBlue(context),
+          style: AppTextStyle.font14RegularDarkBlue,
         ),
         4.horizontalSpace,
         GestureDetector(
@@ -23,7 +23,7 @@ class DontHaveAnAccount extends StatelessWidget {
           },
           child: Text(
             'Sign Up',
-            style: AppTextStyle.font14SemiBoldBlue(context),
+            style: AppTextStyle.font14SemiBoldBlue,
           ),
         ),
       ],
