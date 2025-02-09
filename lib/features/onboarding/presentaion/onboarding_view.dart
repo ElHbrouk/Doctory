@@ -1,4 +1,4 @@
-import 'package:doctory/features/onboarding/ui/widgets/onboarding_view_body.dart';
+import 'package:doctory/features/onboarding/presentaion/widgets/onboarding_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatelessWidget {

@@ -2,8 +2,8 @@ import 'package:doctory/core/helpers/extension.dart';
 import 'package:doctory/core/routing/routes.dart';
 import 'package:doctory/core/theming/app_text_style.dart';
 import 'package:doctory/core/widgets/custom_button.dart';
-import 'package:doctory/features/onboarding/ui/widgets/doc_logo_and_name.dart';
-import 'package:doctory/features/onboarding/ui/widgets/doctor_image_and_welcoming_text.dart';
+import 'package:doctory/features/onboarding/presentaion/widgets/doc_logo_and_name.dart';
+import 'package:doctory/features/onboarding/presentaion/widgets/doctor_image_and_welcoming_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,7 +32,7 @@ class OnboardingViewBody extends StatelessWidget {
                 children: [
                   Text(
                     'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                    style: AppTextStyle.font14RegularGrey(context),
+                    style: AppTextStyle.font14RegularGrey,
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 32.h),

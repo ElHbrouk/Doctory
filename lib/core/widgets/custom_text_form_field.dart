@@ -16,6 +16,7 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.fillColor,
     this.validator,
+    this.controller,
   });
   final String hintText;
   final bool? obscureText;
@@ -27,9 +28,11 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Color? fillColor;
   final String? Function(String?)? validator;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       validator: validator ??
           (value) {
             if (value == null || value.isEmpty) {
@@ -38,25 +41,13 @@ class CustomTextFormField extends StatelessWidget {
             return null;
           },
       decoration: InputDecoration(
+        errorBorder: errorBorder(),
+        focusedErrorBorder: errorBorder(),
         filled: true,
         fillColor: fillColor ?? AppColors.lightestgrey,
-        hintStyle: hintStyle ?? AppTextStyle.font14RegularLightGrey(context),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.0),
-              borderSide: BorderSide(
-                color: AppColors.lightergrey,
-                width: 1.3,
-              ),
-            ),
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.0),
-              borderSide: BorderSide(
-                color: AppColors.lightergrey,
-                width: 1.3,
-              ),
-            ),
+        hintStyle: hintStyle ?? AppTextStyle.font14RegularLightGrey,
+        focusedBorder: focusedBorder ?? regularBorder(),
+        enabledBorder: enabledBorder ?? regularBorder(),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         isDense: true,
@@ -67,9 +58,29 @@ class CustomTextFormField extends StatelessWidget {
             ),
         hintText: hintText,
       ),
-      onTapOutside: (event) => FocusScope.of(context).unfocus(),
+      // onTapOutside: (event) => FocusScope.of(context).unfocus(),
       obscureText: obscureText ?? false,
-      style: AppTextStyle.font14MediumDarkBlue(context),
+      style: AppTextStyle.font14MediumDarkBlue,
     );
   }
+
+  OutlineInputBorder regularBorder() {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(16.0),
+      borderSide: BorderSide(
+        color: AppColors.lightergrey,
+        width: 1.3,
+      ),
+    );
+  }
+}
+
+OutlineInputBorder errorBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16.0),
+    borderSide: BorderSide(
+      color: Colors.red,
+      width: 1.3,
+    ),
+  );
 }

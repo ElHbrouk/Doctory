@@ -38,7 +38,8 @@ class CustomButton extends StatelessWidget {
             horizontal: horizontalPadding?.w ?? 12.w,
           ),
         ),
-        fixedSize: WidgetStateProperty.all(
+
+        minimumSize: WidgetStateProperty.all(
           Size(
             buttonWidth?.w ?? double.maxFinite,
             buttonHeight?.h ?? 52.h,
@@ -53,7 +54,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         buttonName,
-        style: AppTextStyle.font16SemiBoldWhite(context),
+        style: AppTextStyle.font16SemiBoldWhite,
       ),
     );
   }
